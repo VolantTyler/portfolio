@@ -1,0 +1,141 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-06-19",
+  "candidate": {
+    "name": "Tyler Stahl",
+    "headline": "Full-stack software engineer and applied AI developer",
+    "publicContact": {
+      "email": "tylerstahl@gmail.com",
+      "linkedin": "https://linkedin.com/in/tyler-j-stahl"
+    },
+    "summary": "Full-stack software engineer and applied AI developer specializing in multi-agent orchestration, hybrid inference routing, structured data extraction, durable state, and human-in-the-loop workflows. Brings 6+ years of production web engineering experience scaling data-dense applications for millions of users, plus counseling and anthropology training that supports stakeholder translation and responsible AI adoption.",
+    "privacy": "Public-safe profile. Phone and address are not duplicated in this machine-readable file; consult the downloadable resume only when a human reviewer needs full resume contact details."
+  },
+  "documents": {
+    "resumePdf": "docs/Tyler-Resume.pdf",
+    "technicalBriefsPdf": "docs/Tyler-Technical-Briefs.pdf",
+    "humanPortfolio": "index.html",
+    "agentMarkdown": "agents.md",
+    "agentPage": "agents.html"
+  },
+  "coreCompetencies": [
+    "Multi-agent orchestration",
+    "LLM inference routing",
+    "Structured data extraction",
+    "Prompt engineering",
+    "Autonomous workflows",
+    "React",
+    "TypeScript",
+    "Python",
+    "Laravel",
+    "GraphQL",
+    "REST APIs",
+    "SQLite",
+    "PostgreSQL",
+    "Cypress",
+    "Playwright",
+    "CI/CD",
+    "Docker"
+  ],
+  "projects": [
+    {
+      "name": "OpenClaw Multi-Agent Ecosystem",
+      "status": "documented",
+      "liveUrl": null,
+      "screenshots": ["assets/project-previews.png"],
+      "techStack": ["OpenClaw", "Python", "SQLite", "Human-in-the-loop terminal gates"],
+      "keyFocus": "Multi-agent synthesis and reporting on real-world and World of Warcraft commodity markets.",
+      "buildNarrative": "Autonomous team designed to crawl, parse, and structure market intelligence while preserving state across long-running agentic tasks.",
+      "evidence": ["index.html#work", "docs/Tyler-Technical-Briefs.pdf"]
+    },
+    {
+      "name": "Tri-Tier Hybrid Inference Strategy",
+      "status": "documented",
+      "liveUrl": null,
+      "screenshots": ["assets/project-previews.png"],
+      "techStack": ["Gemini 2.5 Pro", "Gemma4:26b", "Gemma4:e2b", "Ollama", "Antigravity"],
+      "keyFocus": "Cost and latency optimization across cloud and local model tiers.",
+      "buildNarrative": "Routing system for the hallucination-versus-latency tradeoff, assigning reasoning, verification, and formatting to different model tiers.",
+      "evidence": ["index.html#work", "docs/Tyler-Technical-Briefs.pdf"]
+    },
+    {
+      "name": "iBlueprint Embeddings",
+      "status": "in-progress",
+      "liveUrl": null,
+      "screenshots": ["assets/project-previews.png"],
+      "techStack": ["Vector databases", "Embeddings", "iBlueprint.ai", "RAG"],
+      "keyFocus": "Data embedding stress-testing for domain-specific retrieval accuracy.",
+      "buildNarrative": "Collaboration focused on vector data infrastructure and embedding model evaluation for blueprinting workflows.",
+      "evidence": ["index.html#work", "docs/Tyler-Technical-Briefs.pdf"]
+    },
+    {
+      "name": "AgentOS: Chief of Staff Agent",
+      "status": "documented",
+      "liveUrl": null,
+      "screenshots": ["assets/project-previews.png"],
+      "techStack": ["Cursor Agent SDK", "Python", "Subagents", "HITL handoffs"],
+      "keyFocus": "Autonomous workflow orchestration for complex, long-running tasks.",
+      "buildNarrative": "Multi-agent orchestrator designed to manage subagents for feature evaluation, testing, validation, and continuous delivery workflows.",
+      "evidence": ["index.html#work", "docs/Tyler-Technical-Briefs.pdf"]
+    },
+    {
+      "name": "Cognitive Bridge",
+      "status": "documented",
+      "liveUrl": null,
+      "screenshots": ["assets/project-previews.png"],
+      "techStack": ["Firebase", "Google AI Studio", "Gemini", "Cloud Firestore", "Python 3.11+", "Pydantic"],
+      "keyFocus": "AI personality and user alignment using the OCEAN model.",
+      "buildNarrative": "Prototype and production pivot for aligning AI agent personality with user traits, including serverless endpoints, typed JSON responses, and durable contextual memory.",
+      "evidence": ["index.html#work", "docs/Tyler-Technical-Briefs.pdf"]
+    }
+  ],
+  "experience": [
+    {
+      "organization": "Independent R&D",
+      "role": "Applied AI Developer",
+      "dates": "February 2026 - Present",
+      "evidence": "Built multi-agent orchestration, hybrid inference routing, Python ETL pipelines, SQLite state management, and HITL approval workflows."
+    },
+    {
+      "organization": "National Alliance on Mental Illness (NAMI)",
+      "role": "Front-End Developer",
+      "dates": "December 2024 - January 2026",
+      "evidence": "Built a centralized design component library, Cypress E2E testing pipelines, and compliance-oriented quality improvements."
+    },
+    {
+      "organization": "Charity Navigator",
+      "role": "Software Engineer / Front-End Web Developer",
+      "dates": "March 2019 - September 2024",
+      "evidence": "Worked on React/TypeScript and GraphQL-backed platforms serving 50,000+ clients, 700,000 concurrent visitor spikes, and 11M+ annual users."
+    },
+    {
+      "organization": "Volant Web Design",
+      "role": "Founder & Web Developer",
+      "dates": "April 2017 - March 2019; September 2024 - Present",
+      "evidence": "Shipped complete full-stack software solutions for B2B clients."
+    }
+  ],
+  "evidenceMatrix": [
+    {
+      "claim": "Applied AI infrastructure",
+      "supportingProject": "OpenClaw, hybrid inference, AgentOS, Cognitive Bridge",
+      "techStack": ["OpenClaw", "Python", "SQLite", "Gemini", "Gemma", "Firebase"],
+      "artifact": "docs/Tyler-Technical-Briefs.pdf",
+      "verificationNote": "Review project briefs for architecture, routing, durable state, HITL, and productionization details."
+    },
+    {
+      "claim": "Production web scale",
+      "supportingProject": "Charity Navigator and NAMI roles",
+      "techStack": ["React", "TypeScript", "GraphQL", "Cypress", "Design systems"],
+      "artifact": "docs/Tyler-Resume.pdf",
+      "verificationNote": "Resume cites 50,000+ clients, 700,000 concurrent visitors, 11M+ annual users, and 30% compliance improvement."
+    },
+    {
+      "claim": "Human-centered AI adoption",
+      "supportingProject": "HITL workflows and interdisciplinary education",
+      "techStack": ["Human-in-the-loop design", "Stakeholder translation", "Technical change management"],
+      "artifact": "docs/Tyler-Resume.pdf",
+      "verificationNote": "Cross-check professional summary, human focus competency, and MA Counseling / BA Anthropology education."
+    }
+  ]
+}
