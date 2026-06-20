@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-06-19",
+  "lastUpdated": "2026-06-20",
   "candidate": {
     "name": "Tyler Stahl",
     "headline": "Full-stack software engineer and applied AI developer",
@@ -8,7 +8,7 @@
       "email": "tylerstahl@gmail.com",
       "linkedin": "https://linkedin.com/in/tyler-j-stahl"
     },
-    "summary": "Full-stack software engineer and applied AI developer specializing in multi-agent orchestration, hybrid inference routing, structured data extraction, durable state, and human-in-the-loop workflows. Brings 6+ years of production web engineering experience scaling data-dense applications for millions of users, plus counseling and anthropology training that supports stakeholder translation and responsible AI adoption.",
+    "summary": "Full-stack software engineer and applied AI developer who turns complex autonomous systems into trusted, intuitive tools. Brings 7+ years of production engineering experience scaling data-dense applications for millions of users, plus hands-on work in multi-agent orchestration, hybrid inference routing, structured data extraction, durable state, and human-in-the-loop workflows. Counseling and anthropology training supports stakeholder translation, trust design, technical change management, and responsible AI adoption.",
     "privacy": "Public-safe profile. Phone and address are not duplicated in this machine-readable file; consult the downloadable resume only when a human reviewer needs full resume contact details."
   },
   "documents": {
@@ -24,16 +24,22 @@
     "Structured data extraction",
     "Prompt engineering",
     "Autonomous workflows",
+    "Human-in-the-loop design",
+    "Technical change management",
     "React",
     "TypeScript",
     "Python",
     "Laravel",
+    "JavaScript",
+    "HTML5/CSS",
+    "Tailwind CSS",
     "GraphQL",
     "REST APIs",
     "SQLite",
     "PostgreSQL",
     "Cypress",
     "Playwright",
+    "Jest",
     "CI/CD",
     "Docker"
   ],
@@ -132,8 +138,8 @@
     },
     {
       "claim": "Human-centered AI adoption",
-      "supportingProject": "HITL workflows and interdisciplinary education",
-      "techStack": ["Human-in-the-loop design", "Stakeholder translation", "Technical change management"],
+      "supportingProject": "HITL workflows, stable specifications, stakeholder translation, and interdisciplinary education",
+      "techStack": ["Human-in-the-loop design", "Stakeholder translation", "Technical change management", "Trust-centered product design"],
       "artifact": "docs/Tyler-Resume.pdf",
       "verificationNote": "Cross-check professional summary, human focus competency, and MA Counseling / BA Anthropology education."
     }
