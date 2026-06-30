@@ -80,8 +80,44 @@
           </dl>
         </div>
         <aside class="profile-panel" aria-label="Profile summary">
-          <div class="portrait-slot">
-            <img src="assets/headshot.jpg" alt="Professional headshot of Tyler Stahl">
+          <div class="portrait-carousel" data-portrait-carousel>
+            <div class="portrait-frame">
+              <img
+                class="portrait-slide is-active"
+                src="assets/headshot.jpg"
+                alt="Professional headshot of Tyler Stahl"
+                data-portrait-slide
+                data-caption="Original real photo"
+              >
+              <img
+                class="portrait-slide"
+                src="assets/portrait-painted.jpg"
+                alt="AI generated painted portrait version of Tyler Stahl"
+                data-portrait-slide
+                data-caption="AI painted portrait"
+              >
+              <img
+                class="portrait-slide ai-cinematic"
+                src="assets/headshot.jpg"
+                alt="AI generated cinematic portrait version of Tyler Stahl"
+                data-portrait-slide
+                data-caption="AI cinematic version"
+              >
+              <img
+                class="portrait-slide ai-illustrated"
+                src="assets/headshot.jpg"
+                alt="AI generated illustrated portrait version of Tyler Stahl"
+                data-portrait-slide
+                data-caption="AI illustrated version"
+              >
+              <button class="portrait-next" type="button" data-portrait-next aria-label="Show next portrait">
+                Next <span aria-hidden="true">→</span>
+              </button>
+            </div>
+            <div class="portrait-carousel-meta">
+              <p class="portrait-caption" data-portrait-caption>Original real photo</p>
+              <div class="portrait-dots" role="tablist" aria-label="Portrait carousel slides" data-portrait-dots></div>
+            </div>
           </div>
           <div class="profile-panel-body">
             <p class="eyebrow">Candidate snapshot</p>
@@ -90,10 +126,6 @@
               Full-stack engineer and applied AI developer connecting complex systems to human needs. I pair production-scale
               engineering with counseling and anthropology training to design for trust, clarity, and confident adoption.
             </p>
-            <figure class="portrait-note">
-              <img src="assets/portrait-painted.jpg" alt="Painted portrait of Tyler Stahl">
-              <figcaption>Engineering advanced systems around human trust.</figcaption>
-            </figure>
             <div class="mini-links">
               <a href="mailto:tylerstahl@gmail.com">Email</a>
               <a href="https://linkedin.com/in/tyler-j-stahl">LinkedIn</a>
