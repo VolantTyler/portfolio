@@ -1,6 +1,58 @@
 const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-nav]");
 
+const THEME_STORAGE_KEY = "portfolio-theme";
+
+function getStoredTheme() {
+  const stored = localStorage.getItem(THEME_STORAGE_KEY);
+  if (stored === "light" || stored === "dark") return stored;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function getInverseTheme(theme) {
+  return theme === "dark" ? "light" : "dark";
+}
+
+function updateThemeToggleLabel(theme) {
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    const nextTheme = getInverseTheme(theme);
+    button.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
+    button.dataset.nextTheme = nextTheme;
+  });
+}
+
+function updatePortfolioPreview(theme) {
+  const iframe = document.querySelector("[data-portfolio-preview-iframe]");
+  if (!iframe) return;
+
+  const previewTheme = getInverseTheme(theme);
+  const nextSrc = `preview.html?theme=${previewTheme}`;
+  if (iframe.getAttribute("src") !== nextSrc) {
+    iframe.setAttribute("src", nextSrc);
+  }
+}
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem(THEME_STORAGE_KEY, theme);
+  updateThemeToggleLabel(theme);
+  updatePortfolioPreview(theme);
+}
+
+function initTheme() {
+  const theme = getStoredTheme();
+  applyTheme(theme);
+
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const currentTheme = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+      applyTheme(getInverseTheme(currentTheme));
+    });
+  });
+}
+
+initTheme();
+
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
@@ -34,7 +86,6 @@ portraitCarousels.forEach((carousel) => {
   const slides = Array.from(carousel.querySelectorAll("[data-portrait-slide]"));
   const nextButton = carousel.querySelector("[data-portrait-next]");
   const dotsContainer = carousel.querySelector("[data-portrait-dots]");
-  const caption = carousel.querySelector("[data-portrait-caption]");
   let activeIndex = 0;
 
   if (!slides.length || !nextButton || !dotsContainer) return;
@@ -44,11 +95,21 @@ portraitCarousels.forEach((carousel) => {
     dot.className = "portrait-dot";
     dot.type = "button";
     dot.setAttribute("role", "tab");
-    dot.setAttribute("aria-label", `Show portrait ${index + 1}: ${slide.dataset.caption || slide.alt}`);
+    dot.setAttribute("aria-label", `Show portrait ${index + 1}: ${slide.dataset.label || slide.alt}`);
     dot.addEventListener("click", () => setActiveSlide(index));
     dotsContainer.append(dot);
     return dot;
   });
+
+  function updateNextButton() {
+    const nextIndex = (activeIndex + 1) % slides.length;
+    const nextSlide = slides[nextIndex];
+    const isRealPhoto = nextSlide.dataset.kind === "me";
+    const label = isRealPhoto ? "me" : "+AI";
+
+    nextButton.textContent = label;
+    nextButton.setAttribute("aria-label", `Show next portrait: ${nextSlide.dataset.label || nextSlide.alt}`);
+  }
 
   function setActiveSlide(index) {
     activeIndex = index;
@@ -65,9 +126,7 @@ portraitCarousels.forEach((carousel) => {
       dot.setAttribute("aria-selected", String(isActive));
     });
 
-    if (caption) {
-      caption.textContent = slides[activeIndex].dataset.caption || "Portrait version";
-    }
+    updateNextButton();
   }
 
   nextButton.addEventListener("click", () => {

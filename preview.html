@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio preview</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const theme = params.get("theme") === "light" ? "light" : "dark";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body class="preview-embed">
+    <section class="preview-hero" aria-label="Portfolio hero preview">
+      <p class="eyebrow">Full-stack software engineer / applied AI developer</p>
+      <h1>Bridging technology and human trust.</h1>
+      <p class="hero-lede">
+        Human portfolio, agent JSON, and Markdown surfaces from one source of truth.
+      </p>
+      <div class="preview-chips" aria-hidden="true">
+        <span>index.html</span>
+        <span>agents.json</span>
+        <span>agents.md</span>
+      </div>
+    </section>
+  </body>
+</html>

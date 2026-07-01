@@ -10,6 +10,11 @@ Use these filenames when adding final personal images and project screenshots:
 - `docs/Tyler-Technical-Briefs.pdf`
 - `assets/headshot.jpg` or `assets/headshot.png`
 - `assets/portrait-painted.jpg`
+- `assets/portrait-cartoon.jpg`
+- `assets/portrait-pencil.jpg`
+- `assets/apple-touch-icon.png`
+- `assets/icon-192.png`
+- `assets/icon-512.png`
 - `assets/alchemia-dashboard.png`
 - `assets/cognitive-bridge-light.png`
 - `assets/projects/project-01.png`
@@ -24,8 +29,14 @@ The remaining project cards use `assets/project-previews.png` as temporary artwo
 
 - `index.html` - public portfolio resume
 - `agents.html` - human-readable agent profile
-- `agents.json` - structured agent-readable profile
-- `agents.md` - plain-text agent-readable profile
+- `agents.json` - structured agent-readable profile (source of truth)
+- `agents.md` - plain-text agent-readable profile (generated from `agents.json`)
+
+Regenerate Markdown after JSON edits:
+
+```bash
+node scripts/sync-agents-md.mjs
+```
 
 ## Local Preview
 
