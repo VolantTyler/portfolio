@@ -13,8 +13,13 @@
     <meta property="og:description" content="Applied AI and full-stack systems designed around human trust, practical utility, and adoption.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/project-previews.png">
+    <meta name="theme-color" content="#24584a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Tyler Stahl">
     <link rel="canonical" href="./">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
   </head>
@@ -22,7 +27,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Portfolio home">
-        <span class="brand-mark">T</span>
+        <span class="brand-mark">TS</span>
         <span>
           <strong>Tyler Stahl</strong>
           <small>Applied AI portfolio</small>
@@ -36,10 +41,13 @@
       </button>
       <nav id="site-nav" class="site-nav" data-nav>
         <a href="#work">Projects</a>
-        <a href="#resume">Resume</a>
+        <a href="#resume">Experience</a>
         <a href="#skills">Skills</a>
         <a href="agents.html">For agents</a>
         <a class="nav-download" href="docs/Tyler-Resume.pdf" download>Resume</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
       </nav>
     </header>
 
@@ -80,8 +88,47 @@
           </dl>
         </div>
         <aside class="profile-panel" aria-label="Profile summary">
-          <div class="portrait-slot">
-            <img src="assets/headshot.jpg" alt="Professional headshot of Tyler Stahl">
+          <div class="portrait-carousel" data-portrait-carousel>
+            <div class="portrait-frame">
+              <img
+                class="portrait-slide is-active"
+                src="assets/headshot.jpg"
+                alt="Professional headshot of Tyler Stahl"
+                data-portrait-slide
+                data-label="Real photo"
+                data-kind="me"
+              >
+              <img
+                class="portrait-slide"
+                src="assets/portrait-painted.jpg"
+                alt="AI generated painted portrait version of Tyler Stahl"
+                data-portrait-slide
+                data-label="AI oil painting portrait"
+                data-kind="ai"
+              >
+              <img
+                class="portrait-slide"
+                src="assets/portrait-cartoon.jpg"
+                alt="AI generated cartoon portrait version of Tyler Stahl"
+                data-portrait-slide
+                data-label="AI cartoon portrait"
+                data-kind="ai"
+              >
+              <img
+                class="portrait-slide"
+                src="assets/portrait-pencil.jpg"
+                alt="AI generated pencil sketch portrait version of Tyler Stahl"
+                data-portrait-slide
+                data-label="AI pencil sketch portrait"
+                data-kind="ai"
+              >
+              <button class="portrait-next" type="button" data-portrait-next aria-label="Show next portrait">
+                +AI
+              </button>
+            </div>
+            <div class="portrait-carousel-meta">
+              <div class="portrait-dots" role="tablist" aria-label="Portrait carousel slides" data-portrait-dots></div>
+            </div>
           </div>
           <div class="profile-panel-body">
             <p class="eyebrow">Candidate snapshot</p>
@@ -90,10 +137,6 @@
               Full-stack engineer and applied AI developer connecting complex systems to human needs. I pair production-scale
               engineering with counseling and anthropology training to design for trust, clarity, and confident adoption.
             </p>
-            <figure class="portrait-note">
-              <img src="assets/portrait-painted.jpg" alt="Painted portrait of Tyler Stahl">
-              <figcaption>Engineering advanced systems around human trust.</figcaption>
-            </figure>
             <div class="mini-links">
               <a href="mailto:tylerstahl@gmail.com">Email</a>
               <a href="https://linkedin.com/in/tyler-j-stahl">LinkedIn</a>
@@ -174,17 +217,31 @@
             </div>
           </article>
           <article class="project-card">
-            <img src="assets/project-previews.png" alt="Placeholder data product screenshot">
+            <div class="portfolio-preview" data-portfolio-preview>
+              <iframe
+                src="preview.html?theme=dark"
+                title="Live portfolio preview in inverse theme"
+                tabindex="-1"
+                loading="lazy"
+                data-portfolio-preview-iframe
+              ></iframe>
+            </div>
             <div class="project-card-body">
               <p class="project-kicker">Project 03</p>
-              <h3>iBlueprint Embeddings</h3>
-              <p>In-progress vector infrastructure collaboration stress-testing embedding implementations for domain-specific RAG accuracy.</p>
+              <h3>Agent-Ready Portfolio Resume</h3>
+              <p>
+                This site: human portfolio plus machine-readable JSON and Markdown surfaces kept in sync, with a live preview
+                that always shows the opposite color mode.
+              </p>
               <ul class="tech-list">
-                <li>Vector DBs</li>
-                <li>Embeddings</li>
-                <li>RAG</li>
+                <li>HTML/CSS</li>
+                <li>agents.json</li>
+                <li>agents.md</li>
               </ul>
-              <a class="text-link" href="docs/Tyler-Technical-Briefs.pdf" download>Read brief</a>
+              <div class="card-actions">
+                <a class="text-link" href="agents.html">Agent profile</a>
+                <a class="text-link" href="agents.md">Markdown</a>
+              </div>
             </div>
           </article>
           <article class="project-card">
