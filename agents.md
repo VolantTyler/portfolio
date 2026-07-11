@@ -23,7 +23,7 @@ Privacy policy: public-safe profile. Phone and address are not duplicated here; 
 | Project | Status | Stack | Evidence |
 | --- | --- | --- | --- |
 | OpenClaw Multi-Agent Ecosystem | Documented | OpenClaw, Python, SQLite, HITL terminal gates | Durable memory, autonomous ETL, governance gates |
-| Tri-Tier Hybrid Inference Strategy | Documented | Gemini 2.5 Pro, Gemma4, Ollama, Antigravity | Reasoning, verification, and formatting model tiers |
+| LLM Reasoning with Human Decisions & PII Masking | Documented | Google ADK, Firebase, Python, OpenTelemetry | Human-in-the-loop schedule concierge, PII masking, and disruption analysis |
 | iBlueprint Embeddings | In progress | Vector DBs, iBlueprint.ai, embeddings, RAG | Embedding optimization and vector persistence testing |
 | AgentOS: Chief of Staff Agent | Documented | Cursor Agent SDK, Python, subagents | Autonomous orchestration and validation handoffs |
 | Cognitive Bridge | Documented | Firebase, Google AI Studio, Gemini, Firestore, Pydantic | Personality alignment, typed JSON, durable contextual memory |
@@ -32,7 +32,7 @@ Privacy policy: public-safe profile. Phone and address are not duplicated here; 
 
 | Claim | Supporting Evidence | Artifact | Verification Note |
 | --- | --- | --- | --- |
-| Applied AI infrastructure | OpenClaw, hybrid inference, AgentOS, Cognitive Bridge | `docs/Tyler-Technical-Briefs.pdf` | Review briefs for architecture, routing, durable state, HITL, and productionization details. |
+| Applied AI infrastructure | OpenClaw, In-Summery.AI, AgentOS, Cognitive Bridge | `docs/Tyler-Technical-Briefs.pdf`, Kaggle writeup | Review briefs and writeup for architecture, routing, durable state, HITL, and PII masking. |
 | Production web scale | Charity Navigator and NAMI roles | `docs/Tyler-Resume.pdf` | Resume cites 50,000+ clients, 700,000 concurrent visitors, 11M+ annual users, and 30% compliance improvement. |
 | Human-centered AI adoption | HITL workflows, stable specifications, stakeholder translation, technical change management, and interdisciplinary education | `docs/Tyler-Resume.pdf` | Cross-check professional summary, core competencies, and education. |
 
