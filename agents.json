@@ -48,51 +48,104 @@
       "name": "OpenClaw Multi-Agent Ecosystem",
       "status": "documented",
       "liveUrl": null,
-      "screenshots": ["assets/alchemia-dashboard.png"],
-      "techStack": ["OpenClaw", "Python", "SQLite", "Human-in-the-loop terminal gates"],
+      "screenshots": [
+        "assets/alchemia-dashboard.png"
+      ],
+      "techStack": [
+        "OpenClaw",
+        "Python",
+        "SQLite",
+        "Human-in-the-loop terminal gates"
+      ],
       "keyFocus": "Multi-agent synthesis and reporting on real-world and World of Warcraft commodity markets.",
       "buildNarrative": "Autonomous team designed to crawl, parse, and structure market intelligence while preserving state across long-running agentic tasks.",
-      "evidence": ["index.html#work", "docs/Tyler-Technical-Briefs.pdf"]
+      "evidence": [
+        "index.html#work",
+        "docs/Tyler-Technical-Briefs.pdf"
+      ]
     },
     {
-      "name": "Tri-Tier Hybrid Inference Strategy",
+      "name": "LLM Reasoning with Human Decisions & PII Masking",
       "status": "documented",
-      "liveUrl": null,
-      "screenshots": ["assets/project-previews.png"],
-      "techStack": ["Gemini 2.5 Pro", "Gemma4:26b", "Gemma4:e2b", "Ollama", "Antigravity"],
-      "keyFocus": "Cost and latency optimization across cloud and local model tiers.",
-      "buildNarrative": "Routing system for the hallucination-versus-latency tradeoff, assigning reasoning, verification, and formatting to different model tiers.",
-      "evidence": ["index.html#work", "docs/Tyler-Technical-Briefs.pdf"]
+      "liveUrl": "https://www.kaggle.com/competitions/vibecoding-agents-capstone-project/writeups/in-summery-ai",
+      "screenshots": [
+        "assets/insummery-dashboard.png"
+      ],
+      "techStack": [
+        "Google ADK",
+        "Firebase",
+        "Python",
+        "OpenTelemetry",
+        "Gemini"
+      ],
+      "keyFocus": "Human-in-the-loop scheduling, PII masking, and gap/disruption analysis.",
+      "buildNarrative": "A family schedule concierge agent designed with a hard confidence gate for parent clarification, utilizing deterministic nodes for PII masking/unmasking and disruption calendar updates.",
+      "evidence": [
+        "index.html#work",
+        "https://www.kaggle.com/competitions/vibecoding-agents-capstone-project/writeups/in-summery-ai"
+      ]
     },
     {
       "name": "iBlueprint Embeddings",
       "status": "in-progress",
       "liveUrl": null,
-      "screenshots": ["assets/project-previews.png"],
-      "techStack": ["Vector databases", "Embeddings", "iBlueprint.ai", "RAG"],
+      "screenshots": [
+        "assets/project-previews.png"
+      ],
+      "techStack": [
+        "Vector databases",
+        "Embeddings",
+        "iBlueprint.ai",
+        "RAG"
+      ],
       "keyFocus": "Data embedding stress-testing for domain-specific retrieval accuracy.",
       "buildNarrative": "Collaboration focused on vector data infrastructure and embedding model evaluation for blueprinting workflows.",
-      "evidence": ["index.html#work", "docs/Tyler-Technical-Briefs.pdf"]
+      "evidence": [
+        "index.html#work",
+        "docs/Tyler-Technical-Briefs.pdf"
+      ]
     },
     {
       "name": "AgentOS: Chief of Staff Agent",
       "status": "documented",
       "liveUrl": null,
-      "screenshots": ["assets/project-previews.png"],
-      "techStack": ["Cursor Agent SDK", "Python", "Subagents", "HITL handoffs"],
+      "screenshots": [
+        "assets/project-previews.png"
+      ],
+      "techStack": [
+        "Cursor Agent SDK",
+        "Python",
+        "Subagents",
+        "HITL handoffs"
+      ],
       "keyFocus": "Autonomous workflow orchestration for complex, long-running tasks.",
       "buildNarrative": "Multi-agent orchestrator designed to manage subagents for feature evaluation, testing, validation, and continuous delivery workflows.",
-      "evidence": ["index.html#work", "docs/Tyler-Technical-Briefs.pdf"]
+      "evidence": [
+        "index.html#work",
+        "docs/Tyler-Technical-Briefs.pdf"
+      ]
     },
     {
       "name": "Cognitive Bridge",
       "status": "documented",
       "liveUrl": "https://cognitive-bridge-ai.web.app/",
-      "screenshots": ["assets/cognitive-bridge-light.png"],
-      "techStack": ["Firebase", "Google AI Studio", "Gemini", "Cloud Firestore", "Python 3.11+", "Pydantic"],
+      "screenshots": [
+        "assets/cognitive-bridge-light.png"
+      ],
+      "techStack": [
+        "Firebase",
+        "Google AI Studio",
+        "Gemini",
+        "Cloud Firestore",
+        "Python 3.11+",
+        "Pydantic"
+      ],
       "keyFocus": "AI personality and user alignment using the OCEAN model.",
       "buildNarrative": "Prototype and production pivot for aligning AI agent personality with user traits, including serverless endpoints, typed JSON responses, and durable contextual memory.",
-      "evidence": ["index.html#work", "docs/Tyler-Technical-Briefs.pdf"]
+      "evidence": [
+        "index.html#work",
+        "docs/Tyler-Technical-Briefs.pdf"
+      ]
     }
   ],
   "experience": [
@@ -100,7 +153,7 @@
       "organization": "Independent R&D",
       "role": "Applied AI Developer",
       "dates": "February 2026 - Present",
-      "evidence": "Built multi-agent orchestration, hybrid inference routing, Python ETL pipelines, SQLite state management, and HITL approval workflows."
+      "evidence": "Built multi-agent orchestration, human-in-the-loop scheduling (In-Summery.AI), Python ETL pipelines, SQLite state management, and PII masking nodes."
     },
     {
       "organization": "National Alliance on Mental Illness (NAMI)",
@@ -124,22 +177,41 @@
   "evidenceMatrix": [
     {
       "claim": "Applied AI infrastructure",
-      "supportingProject": "OpenClaw, hybrid inference, AgentOS, Cognitive Bridge",
-      "techStack": ["OpenClaw", "Python", "SQLite", "Gemini", "Gemma", "Firebase"],
+      "supportingProject": "OpenClaw, In-Summery.AI, AgentOS, Cognitive Bridge",
+      "techStack": [
+        "OpenClaw",
+        "Python",
+        "SQLite",
+        "Gemini",
+        "Gemma",
+        "Firebase",
+        "OpenTelemetry"
+      ],
       "artifact": "docs/Tyler-Technical-Briefs.pdf",
-      "verificationNote": "Review project briefs for architecture, routing, durable state, HITL, and productionization details."
+      "verificationNote": "Review briefs and In-Summery.AI writeup for architecture, routing, durable state, HITL, and PII masking."
     },
     {
       "claim": "Production web scale",
       "supportingProject": "Charity Navigator and NAMI roles",
-      "techStack": ["React", "TypeScript", "GraphQL", "Cypress", "Design systems"],
+      "techStack": [
+        "React",
+        "TypeScript",
+        "GraphQL",
+        "Cypress",
+        "Design systems"
+      ],
       "artifact": "docs/Tyler-Resume.pdf",
       "verificationNote": "Resume cites 50,000+ clients, 700,000 concurrent visitors, 11M+ annual users, and 30% compliance improvement."
     },
     {
       "claim": "Human-centered AI adoption",
       "supportingProject": "HITL workflows, stable specifications, stakeholder translation, and interdisciplinary education",
-      "techStack": ["Human-in-the-loop design", "Stakeholder translation", "Technical change management", "Trust-centered product design"],
+      "techStack": [
+        "Human-in-the-loop design",
+        "Stakeholder translation",
+        "Technical change management",
+        "Trust-centered product design"
+      ],
       "artifact": "docs/Tyler-Resume.pdf",
       "verificationNote": "Cross-check professional summary, human focus competency, and MA Counseling / BA Anthropology education."
     }
