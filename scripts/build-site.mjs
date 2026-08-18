@@ -71,8 +71,11 @@ function linkHtml(link, className) {
   return `<a ${attrs}>${esc(link.label)}</a>`;
 }
 
-const techList = (tech, limit) =>
-  (tech ?? []).slice(0, limit).map((t) => `  <li>${esc(t)}</li>`).join("\n");
+const techList = (tech, limit, indent) =>
+  (tech ?? []).slice(0, limit).map((t) => `${indent}<li>${esc(t)}</li>`).join("\n");
+
+/** Join template lines, dropping the empties left by omitted optional blocks. */
+const lines = (...parts) => parts.filter((part) => part !== "" && part != null).join("\n");
 
 /** The card headline may be a plain-English description; keep the product name as a subtitle. */
 const subtitle = (p) =>
@@ -89,21 +92,23 @@ const kicker = (p) => [p.organization, p.timeframe].filter(Boolean).join(" · ")
 
 function renderFeatured(project) {
   if (!project) return "";
-  const links = (project.portfolioLinks ?? []).map((l) => "    " + linkHtml(l, "text-link")).join("\n");
-  return `<article class="feature-layout">
-  <div class="project-media">
-    <img src="assets/${esc(project.portfolioImage)}" alt="${esc(project.portfolioHeadline ?? project.name)}">
-  </div>
-  <div class="feature-copy">
-    <p class="project-kicker">${esc(kicker(project))} / Featured</p>
-    <h3>${esc(project.portfolioHeadline ?? project.name)}</h3>${subtitle(project)}
-    <p>${esc(project.portfolioBlurb ?? project.solution ?? "")}</p>
-    <ul class="tech-list" aria-label="Technology stack">
-${techList(project.technologies, 4)}
-    </ul>
-${links ? `    <div class="inline-actions">\n${links}\n    </div>` : ""}
-  </div>
-</article>`;
+  const links = (project.portfolioLinks ?? []).map((l) => "      " + linkHtml(l, "text-link")).join("\n");
+  return lines(
+    `<article class="feature-layout">`,
+    `  <div class="project-media">`,
+    `    <img src="assets/${esc(project.portfolioImage)}" alt="${esc(project.portfolioHeadline ?? project.name)}">`,
+    `  </div>`,
+    `  <div class="feature-copy">`,
+    `    <p class="project-kicker">${esc(kicker(project))} / Featured</p>`,
+    `    <h3>${esc(project.portfolioHeadline ?? project.name)}</h3>${subtitle(project)}`,
+    `    <p>${esc(project.portfolioBlurb ?? project.solution ?? "")}</p>`,
+    `    <ul class="tech-list" aria-label="Technology stack">`,
+    techList(project.technologies, 4, "      "),
+    `    </ul>`,
+    links ? `    <div class="inline-actions">\n${links}\n    </div>` : "",
+    `  </div>`,
+    `</article>`,
+  );
 }
 
 function renderProjectCard(p) {
@@ -111,18 +116,20 @@ function renderProjectCard(p) {
   const image = p.portfolioImage
     ? `assets/${esc(p.portfolioImage)}`
     : "assets/project-previews.png";
-  return `<article class="project-card">
-  <img src="${image}" alt="${esc(p.portfolioHeadline ?? p.name)}">
-  <div class="project-card-body">
-    <p class="project-kicker">${esc(kicker(p))}</p>
-    <h3>${esc(p.portfolioHeadline ?? p.name)}</h3>${subtitle(p)}
-    <p>${esc(p.portfolioBlurb ?? p.problem ?? "")}</p>
-    <ul class="tech-list">
-${techList(p.technologies, 3)}
-    </ul>
-${links ? `    <div class="card-actions">\n${links}\n    </div>` : ""}
-  </div>
-</article>`;
+  return lines(
+    `<article class="project-card">`,
+    `  <img src="${image}" alt="${esc(p.portfolioHeadline ?? p.name)}">`,
+    `  <div class="project-card-body">`,
+    `    <p class="project-kicker">${esc(kicker(p))}</p>`,
+    `    <h3>${esc(p.portfolioHeadline ?? p.name)}</h3>${subtitle(p)}`,
+    `    <p>${esc(p.portfolioBlurb ?? p.problem ?? "")}</p>`,
+    `    <ul class="tech-list">`,
+    techList(p.technologies, 3, "      "),
+    `    </ul>`,
+    links ? `    <div class="card-actions">\n${links}\n    </div>` : "",
+    `  </div>`,
+    `</article>`,
+  );
 }
 
 function renderExperience(roles) {
