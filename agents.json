@@ -185,6 +185,19 @@
         "Modular subagent design for evaluation and testing workflows.",
         "Mandatory human approval handoffs at critical stages."
       ]
+    },
+    {
+      "name": "Stack Overlord",
+      "status": "documented",
+      "techStack": [
+        "Codex",
+        "GPT-5.6"
+      ],
+      "buildNarrative": "Built Stack Overlord primarily in Codex/GPT-5.6, with project intelligence powered by GPT-5.6.",
+      "evidence": [
+        "Hackathon project delivered primarily via Codex/GPT-5.6.",
+        "GPT-5.6 used for project intelligence."
+      ]
     }
   ],
   "experience": [

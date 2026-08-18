@@ -75,6 +75,15 @@ Multi-agent orchestrator designed to manage subagents for feature evaluation, te
 - Modular subagent design for evaluation and testing workflows.
 - Mandatory human approval handoffs at critical stages.
 
+### Stack Overlord
+
+Stack: Codex, GPT-5.6
+
+Built Stack Overlord primarily in Codex/GPT-5.6, with project intelligence powered by GPT-5.6.
+
+- Hackathon project delivered primarily via Codex/GPT-5.6.
+- GPT-5.6 used for project intelligence.
+
 ## Experience
 
 ### Applied AI Developer — Independent R&D
