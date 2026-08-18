@@ -1,0 +1,77 @@
+name: Sync résumé content
+
+# Pulls the published export from VolantTyler/resume-system and opens a pull
+# request when it has changed.
+#
+# The coupling runs one way: that repo publishes a public contract and knows
+# nothing about this site. So this workflow needs no cross-repo credential — it
+# reads a public URL and writes to its own repo with the built-in GITHUB_TOKEN.
+#
+# Requires "Allow GitHub Actions to create and approve pull requests" under
+# Settings → Actions → General, or the pull-request step fails with an opaque
+# permissions error.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Mondays at 13:00 UTC. The manual trigger above is the one to use after
+    # merging a résumé change; this is just a safety net.
+    - cron: "0 13 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-resume
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Pull the published résumé export
+        id: sync
+        run: |
+          result="$(node scripts/sync-resume-content.mjs)"
+          echo "$result"
+          if [ "$result" = "unchanged" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "summary=$result" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Render the generated regions
+        if: steps.sync.outputs.changed == 'true'
+        run: node scripts/build-site.mjs
+
+      - name: Verify the render is complete
+        if: steps.sync.outputs.changed == 'true'
+        run: node scripts/build-site.mjs --check
+
+      - name: Open a pull request
+        if: steps.sync.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: sync/resume-content
+          commit-message: "Sync résumé content from resume-system"
+          title: "Sync résumé content from resume-system"
+          body: |
+            Automated sync of `data/resume-content.json` from
+            [`VolantTyler/resume-system`](https://github.com/VolantTyler/resume-system),
+            with the generated regions of the site re-rendered.
+
+            **${{ steps.sync.outputs.summary }}**
+
+            Review the Vercel preview before merging — this changes what
+            tylerstahl.dev publishes. Only the regions between `generated:`
+            markers move; hero copy, the evidence matrix, and the hand-written
+            Agent-Ready card are untouched.
+          delete-branch: true

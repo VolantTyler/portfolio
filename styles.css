@@ -964,3 +964,121 @@ body.preview-embed {
     font-size: 1rem;
   }
 }
+
+/* Active chip: a solid fill that carries light text in either theme. */
+:root {
+  --chip-active-bg: #24584a;
+  --chip-active-fg: #fbfaf7;
+}
+
+[data-theme="dark"] {
+  --chip-active-bg: #2f6d5c;
+  --chip-active-fg: #f4f8f6;
+}
+
+.project-subtitle {
+  margin: -0.35rem 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.skill-filter {
+  margin-top: 3rem;
+}
+
+.skill-filter-title {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.chip:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+.chip.is-active {
+  background: var(--chip-active-bg);
+  border-color: var(--chip-active-bg);
+  color: var(--chip-active-fg);
+}
+
+.chip-count {
+  font-size: 0.75rem;
+  font-weight: 800;
+  opacity: 0.75;
+  font-variant-numeric: tabular-nums;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skill-pill {
+  border: 1px solid rgba(36, 88, 74, 0.24);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  color: var(--green);
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.skill-pill[hidden] {
+  display: none;
+}
+
+[data-theme="dark"] .chip {
+  background: rgba(20, 26, 23, 0.72);
+}
+
+/* Wins over the dark base rule above, which shares its specificity. */
+[data-theme="dark"] .chip.is-active {
+  background: var(--chip-active-bg);
+  border-color: var(--chip-active-bg);
+  color: var(--chip-active-fg);
+}
+
+[data-theme="dark"] .skill-pill {
+  background: rgba(20, 26, 23, 0.72);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip {
+    transition: none;
+  }
+}

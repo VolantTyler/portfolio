@@ -1,14 +1,14 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2026-06-20",
+  "lastUpdated": "2026-08-18",
   "candidate": {
     "name": "Tyler Stahl",
-    "headline": "Full-stack software engineer and applied AI developer",
+    "headline": "Full-Stack Software Engineer and Applied AI Developer",
     "publicContact": {
       "email": "tylerstahl@gmail.com",
       "linkedin": "https://linkedin.com/in/tyler-j-stahl"
     },
-    "summary": "Full-stack software engineer and applied AI developer who turns complex autonomous systems into trusted, intuitive tools. Brings 7+ years of production engineering experience scaling data-dense applications for millions of users, plus hands-on work in multi-agent orchestration, hybrid inference routing, structured data extraction, durable state, and human-in-the-loop workflows. Counseling and anthropology training supports stakeholder translation, trust design, technical change management, and responsible AI adoption.",
+    "summary": "Full-stack software engineer with experience shipping React/TypeScript and Laravel applications at nonprofit scale, plus hands-on applied AI systems work.",
     "privacy": "Public-safe profile. Phone and address are not duplicated in this machine-readable file; consult the downloadable resume only when a human reviewer needs full resume contact details."
   },
   "documents": {
@@ -20,48 +20,74 @@
   },
   "coreCompetencies": [
     "Multi-agent orchestration",
-    "LLM inference routing",
-    "Structured data extraction",
-    "Prompt engineering",
-    "Autonomous workflows",
-    "Human-in-the-loop design",
-    "Technical change management",
+    "CrewAI",
+    "Hybrid LLM inference",
+    "Antigravity",
+    "Gemma4",
+    "Google AI Studio",
+    "Codex / GPT",
+    "Human-in-the-loop controls",
+    "PII masking",
+    "Agent evaluation",
+    "Embeddings / RAG",
+    "Vertex AI",
+    "Ollama",
+    "Cursor Agent SDK",
+    "Model Context Protocol",
+    "Weights & Biases Weave",
+    "JavaScript",
     "React",
     "TypeScript",
-    "Python",
-    "Laravel",
-    "JavaScript",
-    "HTML5/CSS",
+    "Next.js",
+    "Alpine",
     "Tailwind CSS",
+    "Livewire",
+    "Figma",
+    "Adobe XD",
+    "Storybook",
+    "UX Design / Prototyping",
+    "Performance optimization",
+    "Firebase",
+    "Firestore",
+    "Sequelize",
+    "Python",
+    "FastAPI",
+    "Slack Bolt",
+    "Google Docs / Drive APIs",
+    "Laravel",
     "GraphQL",
-    "REST APIs",
     "SQLite",
-    "PostgreSQL",
+    "Clerk OAuth",
+    "PHP",
     "Cypress",
-    "Playwright",
-    "Jest",
+    "Docker",
     "CI/CD",
-    "Docker"
+    "GitHub Actions",
+    "Release support",
+    "Stakeholder collaboration",
+    "Deep listening",
+    "Agile / Scrum",
+    "Consensus-building",
+    "Cross-department collaboration"
   ],
   "projects": [
     {
-      "name": "OpenClaw Multi-Agent Ecosystem",
+      "name": "Development Knowledge Vault",
       "status": "documented",
-      "liveUrl": null,
-      "screenshots": [
-        "assets/alchemia-dashboard.png"
-      ],
       "techStack": [
-        "OpenClaw",
-        "Python",
-        "SQLite",
-        "Human-in-the-loop terminal gates"
+        "Next.js",
+        "Vercel",
+        "MCP",
+        "Clerk",
+        "OAuth",
+        "TypeScript",
+        "Markdown"
       ],
-      "keyFocus": "Multi-agent synthesis and reporting on real-world and World of Warcraft commodity markets.",
-      "buildNarrative": "Autonomous team designed to crawl, parse, and structure market intelligence while preserving state across long-running agentic tasks.",
+      "buildNarrative": "Built a Vercel-hosted MCP server that exposes markdown engineering patterns as tools (`list_patterns`, `get_pattern`), with dual auth on one URL—Clerk OAuth for cloud clients and an optional shared-secret Bearer for local/curl—so Cursor, Gemini Spark, and other MCP clients can pull operational preferences and prior solutions at request time.",
       "evidence": [
-        "index.html#work",
-        "docs/Tyler-Technical-Briefs.pdf"
+        "Production MCP endpoint serving a curated pattern corpus (deploy, auth, evals, PII, multi-agent, YAML SOT, and related practices).",
+        "Dual-acceptance auth documented and shipped so the same URL works for OAuth clients and Bearer-configured IDE/curl without smart surface detection.",
+        "Personal Cursor skill (`knowledge-vault`) that steers agents to query the vault before inventing process."
       ]
     },
     {
@@ -72,57 +98,49 @@
         "assets/insummery-dashboard.png"
       ],
       "techStack": [
-        "Google ADK",
-        "Firebase",
+        "Google ADK 2.0",
         "Python",
-        "OpenTelemetry",
-        "Gemini"
+        "Pydantic",
+        "Google Gemini",
+        "Vertex AI",
+        "Gemma",
+        "Ollama",
+        "Firebase",
+        "Firebase Cloud Functions",
+        "Cloud Firestore",
+        "Firebase Authentication",
+        "React",
+        "Vite",
+        "Google Calendar API",
+        "OpenTelemetry"
       ],
       "keyFocus": "Human-in-the-loop scheduling, PII masking, and gap/disruption analysis.",
       "buildNarrative": "A family schedule concierge agent designed with a hard confidence gate for parent clarification, utilizing deterministic nodes for PII masking/unmasking and disruption calendar updates.",
       "evidence": [
-        "index.html#work",
-        "https://www.kaggle.com/competitions/vibecoding-agents-capstone-project/writeups/in-summery-ai"
+        "Capstone writeup published on Kaggle for the vibecoding agents competition.",
+        "Public demo app and GitHub repository with CLI and Firebase web modes.",
+        "Deterministic eval harness with absolute quality gates (e.g., 90% triager accuracy, 80% workflow pass rate) and baseline regression tracking."
       ]
     },
     {
-      "name": "iBlueprint Embeddings",
-      "status": "in-progress",
-      "liveUrl": null,
-      "screenshots": [
-        "assets/project-previews.png"
-      ],
-      "techStack": [
-        "Vector databases",
-        "Embeddings",
-        "iBlueprint.ai",
-        "RAG"
-      ],
-      "keyFocus": "Data embedding stress-testing for domain-specific retrieval accuracy.",
-      "buildNarrative": "Collaboration focused on vector data infrastructure and embedding model evaluation for blueprinting workflows.",
-      "evidence": [
-        "index.html#work",
-        "docs/Tyler-Technical-Briefs.pdf"
-      ]
-    },
-    {
-      "name": "AgentOS: Chief of Staff Agent",
+      "name": "Multi-Agent Market Intelligence Ecosystem",
       "status": "documented",
-      "liveUrl": null,
       "screenshots": [
-        "assets/project-previews.png"
+        "assets/alchemia-dashboard.png"
       ],
       "techStack": [
-        "Cursor Agent SDK",
+        "OpenClaw",
         "Python",
-        "Subagents",
-        "HITL handoffs"
+        "SQLite",
+        "Google Gemini",
+        "Gemma"
       ],
-      "keyFocus": "Autonomous workflow orchestration for complex, long-running tasks.",
-      "buildNarrative": "Multi-agent orchestrator designed to manage subagents for feature evaluation, testing, validation, and continuous delivery workflows.",
+      "buildNarrative": "Built an autonomous research framework on OpenClaw with specialized agents (data pull, profitability analysis, dashboard UI, orchestrator), SQLite persistence, Python ETL workers, and HITL approval gates—applied to real-world and World of Warcraft commodity markets.",
       "evidence": [
-        "index.html#work",
-        "docs/Tyler-Technical-Briefs.pdf"
+        "Durable multi-turn agent memory across interrupted research tasks.",
+        "Structured extraction of market data into relational formats.",
+        "Human validation before high-stakes database commits.",
+        "Faster market-context decision making in the pilot domain (self-reported ~15% profit lift in interview notes; medium/low confidence)."
       ]
     },
     {
@@ -133,18 +151,39 @@
         "assets/cognitive-bridge-light.png"
       ],
       "techStack": [
-        "Firebase",
         "Google AI Studio",
-        "Gemini",
+        "Google Gemini",
+        "Firebase",
+        "Firebase Cloud Functions",
         "Cloud Firestore",
-        "Python 3.11+",
-        "Pydantic"
+        "Firebase Authentication",
+        "Vertex AI",
+        "Pydantic",
+        "Python"
       ],
       "keyFocus": "AI personality and user alignment using the OCEAN model.",
       "buildNarrative": "Prototype and production pivot for aligning AI agent personality with user traits, including serverless endpoints, typed JSON responses, and durable contextual memory.",
       "evidence": [
-        "index.html#work",
-        "docs/Tyler-Technical-Briefs.pdf"
+        "Personality map generation from a brief user interview.",
+        "Demonstration of aligned and unaligned chat responses for evaluation.",
+        "Migrated prototype to a serverless Python backend with auth-scoped endpoints and durable Firestore memory."
+      ]
+    },
+    {
+      "name": "AgentOS: Chief of Staff Agent",
+      "status": "documented",
+      "screenshots": [
+        "assets/agentos-capability-map.png"
+      ],
+      "techStack": [
+        "Cursor Agent SDK",
+        "Python"
+      ],
+      "keyFocus": "Autonomous workflow orchestration for complex, long-running tasks.",
+      "buildNarrative": "Multi-agent orchestrator designed to manage subagents for feature evaluation, testing, validation, and continuous delivery workflows.",
+      "evidence": [
+        "Modular subagent design for evaluation and testing workflows.",
+        "Mandatory human approval handoffs at critical stages."
       ]
     }
   ],
@@ -152,26 +191,49 @@
     {
       "organization": "Independent R&D",
       "role": "Applied AI Developer",
-      "dates": "February 2026 - Present",
-      "evidence": "Built multi-agent orchestration, human-in-the-loop scheduling (In-Summery.AI), Python ETL pipelines, SQLite state management, and PII masking nodes."
+      "dates": "Feb 2026 - Present",
+      "evidence": [
+        "Built a CrewAI Supervisor that routes simple Slack prompts to a direct answer and detailed requests to a dynamically selected specialist crew.",
+        "Shipped a FastAPI + Slack Socket Mode backend that turns @mentions into threaded multi-agent Guild reports without a public webhook.",
+        "Built a Vercel-hosted MCP knowledge vault that serves reusable engineering patterns as tools for AI coding agents.",
+        "Designed one-URL MCP auth that accepts either a shared-secret Bearer token or a Clerk OAuth access token based on the client request.",
+        "Built InSummery.AI, an ADK multi-agent family schedule concierge that turns messy registration and disruption messages into a structured multi-child schedule.",
+        "Deployed InSummery on Firebase (Auth, Cloud Functions, Firestore) with a React dashboard and local CLI mode for zero-cloud demos.",
+        "Built a multi-agent market-intelligence pilot on OpenClaw with specialized agents and SQLite-backed durable memory for long-running research workflows.",
+        "Built Stack Overlord for OpenAI Build Week primarily with Codex/GPT-5.6, using GPT-5.6 for project intelligence."
+      ]
     },
     {
-      "organization": "National Alliance on Mental Illness (NAMI)",
+      "organization": "NAMI",
       "role": "Front-End Developer",
-      "dates": "December 2024 - January 2026",
-      "evidence": "Built a centralized design component library, Cypress E2E testing pipelines, and compliance-oriented quality improvements."
+      "dates": "Dec 2024 - Jan 2026",
+      "evidence": [
+        "Led Cypress automated testing implementation for a Laravel/Livewire event platform, improving regression coverage and team confidence."
+      ]
     },
     {
       "organization": "Charity Navigator",
-      "role": "Software Engineer / Front-End Web Developer",
-      "dates": "March 2019 - September 2024",
-      "evidence": "Worked on React/TypeScript and GraphQL-backed platforms serving 50,000+ clients, 700,000 concurrent visitor spikes, and 11M+ annual users."
+      "role": "Software Engineer",
+      "dates": "Aug 2023 - Sep 2024",
+      "evidence": [
+        "Built React/TypeScript portal features for 50,000+ clients and helped sustain high-traffic events with hundreds of thousands of concurrent visitors."
+      ]
+    },
+    {
+      "organization": "Charity Navigator",
+      "role": "Front-End Web Developer",
+      "dates": "Mar 2019 - Aug 2023",
+      "evidence": [
+        "Led frontend execution of a major rebrand and platform rebuild serving 11M+ annual users in collaboration with external design agencies."
+      ]
     },
     {
       "organization": "Volant Web Design",
       "role": "Founder & Web Developer",
-      "dates": "April 2017 - March 2019; September 2024 - Present",
-      "evidence": "Shipped complete full-stack software solutions for B2B clients."
+      "dates": "Apr 2017 - Mar 2019",
+      "evidence": [
+        "Founded a web design business delivering PHP/JS sites, SEO, and analytics for clients across multiple industries."
+      ]
     }
   ],
   "evidenceMatrix": [

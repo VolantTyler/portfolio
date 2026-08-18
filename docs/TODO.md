@@ -4,7 +4,7 @@ Open items across **both** repos — `VolantTyler/portfolio` and `VolantTyler/re
 Milestone work itself lives in [resume-portfolio-sync-plan.md](resume-portfolio-sync-plan.md);
 this file tracks everything else plus anything that surfaces along the way.
 
-Last updated 2026-08-14.
+Last updated 2026-08-18.
 
 ---
 
@@ -25,9 +25,9 @@ Last updated 2026-08-14.
       all. That command has never worked, so `agents.md` is hand-maintained and almost certainly
       out of sync with `agents.json`. *Scheduled: Milestone 2.*
 
-- [ ] **Skills export is empty** — `resume-content.json` emits zero skills because the filter in
-      `build-resume-context.ts` matches `skill.target_roles` against the target id
-      `portfolio-focused`, and none of the 48 skills list it. *Scheduled: Milestone 1.*
+- [x] **Skills export was empty** — fixed in Milestone 1. The filter matched `skill.target_roles`
+      against the target id `portfolio-focused`, which no skill listed, so zero skills exported.
+      Now 50 skills export across five facets.
 
 - [ ] **Hardcoded "Project 01–05" kickers** — once the generator numbers cards itself, the
       hand-written Agent-Ready Portfolio card wedged among them makes the numbering wrong.
@@ -97,19 +97,88 @@ Last updated 2026-08-14.
 
 ---
 
+## Deferred follow-up work
+
+Things worth doing that are deliberately *not* part of any milestone. Parked here so they don't
+get lost.
+
+- [ ] **Fix the 0×0 browser viewport so generated pages can be inspected** — the in-app browser
+      pane reports `innerWidth: 0, innerHeight: 0`, and a `resize_window` call does not correct it.
+      Consequences seen while building Milestone 2:
+      screenshots come back uniformly blank; the page measured 57,735px tall with zero-width grid
+      columns (a collapse artifact, not a layout bug); and computed styles went stale, reporting a
+      chip background that contradicted the CSS variable it reads.
+      JavaScript execution and DOM queries *do* work, so structure and behaviour can still be
+      verified — but nothing visual can. Tyler's expectation is that generated pages are
+      inspectable, so this is worth fixing rather than working around. **Not urgent.**
+
+- [ ] **Write the knowledge-vault pattern** — this project embodies a reusable pattern the vault
+      does not yet cover: *a one-directional generated-content contract between two repos*
+      (consumer-side pull with no shared credential, marker-based partial generation of a static
+      site, and validation guards for silent-drop failures). Closest existing neighbour is
+      `yaml-knowledge-systems.md`.
+      **How to add it:** the Knowledge Vault MCP exposes only `list_patterns` and `get_pattern` —
+      it is read-only, so it cannot be updated from a chat session. The new pattern must be
+      committed as a markdown file to the `development-knowledge-vault` repo, which is what the
+      MCP server serves. Draft the markdown here, commit it there.
+
+- [ ] **Extract a `milestone-pr-review` skill** — the same review shape has now run twice (M0, M1)
+      and caught a real defect both times that the diff did not show: fetch the branch, run
+      `validate` + the full test suite, verify the *generated output* against the plan's acceptance
+      criteria, probe any new guard in **both** directions, then report. Worth making repeatable.
+
+- [ ] **Extract a `cloud-agent-handoff` skill** — the kickoff-prompt shape used for Milestones 0
+      and 1: target branch, an explicit scope fence ("this milestone only, do not touch the other
+      repo"), numbered tasks with real file paths, known values spelled out, an explicit VERIFY
+      block, and "commit and open a PR, do not merge."
+
+- [ ] **Add `tsc --noEmit` to the test pipeline** — adding a value to the `PortfolioFacet` union
+      without a matching `STUB_KEYWORDS` entry is a compile error that nothing caught, because
+      `tsx` strips types at runtime and no step type-checks. It surfaced as four confusing test
+      failures instead of one clear error.
+
+- [ ] **Exclude stray worktrees from vitest** — the runner collects
+      `.claude/worktrees/self-verifying-ai-skill-1aed9f/tests/generation.test.ts`, adding ~18s of
+      duplicate PDF generation to every run. Unrelated work leaking into the suite.
+
+- [ ] **Live URL for Development Knowledge Vault** — it is a Vercel-hosted MCP server per its own
+      YAML entry, and it is the one genuinely new card, but no URL is recorded so it ships with no
+      links. Add one to `portfolio_links`.
+
+- [ ] **Possible skill redundancy** — `Stakeholder collaboration` and `Cross-department
+      collaboration` now sit side by side in the collaboration facet. Collapse into one if they
+      read as duplicates on the site.
+
+- [ ] **Revisit `Release support`** — it lives in the Collaboration category but is explicitly
+      faceted `devops`, which keeps that chip at 4 instead of 3. Defensible, but it is the one
+      skill whose facet disagrees with its category.
+
+---
+
 ## Milestones
 
 Detail in [resume-portfolio-sync-plan.md](resume-portfolio-sync-plan.md).
 
 - [x] **0 — Reconcile the data** · `resume-system` · [PR #18](https://github.com/VolantTyler/resume-system/pull/18)
-- [ ] **1 — Extend the schema for presentation** · `resume-system` · next
-- [ ] **2 — Add the render step** · `portfolio` · prep work can start early
+- [x] **1 — Extend the schema for presentation** · `resume-system` · [PR #20](https://github.com/VolantTyler/resume-system/pull/20)
+- [ ] **2 — Add the render step** · `portfolio` · **in progress**
 - [ ] **3 — Automate the pull** · `portfolio`
 - [ ] **4 — Prove it with Stack Overlord** · both · run locally, needs a Vercel preview
 
 ---
 
 ## Recently resolved
+
+- [x] Milestone 1: `portfolio_` presentation fields, skill facets, and a `classify-skills` script
+      with an offline stub for when no API key is configured.
+- [x] Added a fifth `collaboration` facet so "Deep listening" and "Stakeholder collaboration" stop
+      appearing under the Front-End and Back-End chips, plus two new skills — Consensus-building
+      and Cross-department collaboration. `Agile` is now `Agile / Scrum`.
+- [x] Restored five project links that would have silently disappeared once Milestone 2 generates
+      the cards: InSummery's Kaggle writeup and live demo, and the technical brief on OpenClaw,
+      AgentOS, and Cognitive Bridge.
+- [x] Loosened the link schema to accept site-relative paths like `docs/Tyler-Technical-Briefs.pdf`;
+      it previously demanded an absolute URL.
 
 - [x] Volant 2024 stint retired from the record; 2017 stint restored to all nine résumé versions
       with its accomplishment so it no longer renders as an empty section.
