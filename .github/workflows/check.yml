@@ -1,0 +1,23 @@
+name: Check
+
+# The site serves committed HTML, so the risk is committed output drifting from
+# data/resume-content.json. This catches that on a pull request.
+#
+# Deliberately not part of the Vercel build: a stale-output failure should block
+# the merge, not the ability to deploy an unrelated fix.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Generated output matches the data
+        run: node scripts/build-site.mjs --check
