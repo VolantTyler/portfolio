@@ -102,6 +102,16 @@ Last updated 2026-08-18.
 Things worth doing that are deliberately *not* part of any milestone. Parked here so they don't
 get lost.
 
+- [ ] **Fix the 0×0 browser viewport so generated pages can be inspected** — the in-app browser
+      pane reports `innerWidth: 0, innerHeight: 0`, and a `resize_window` call does not correct it.
+      Consequences seen while building Milestone 2:
+      screenshots come back uniformly blank; the page measured 57,735px tall with zero-width grid
+      columns (a collapse artifact, not a layout bug); and computed styles went stale, reporting a
+      chip background that contradicted the CSS variable it reads.
+      JavaScript execution and DOM queries *do* work, so structure and behaviour can still be
+      verified — but nothing visual can. Tyler's expectation is that generated pages are
+      inspectable, so this is worth fixing rather than working around. **Not urgent.**
+
 - [ ] **Write the knowledge-vault pattern** — this project embodies a reusable pattern the vault
       does not yet cover: *a one-directional generated-content contract between two repos*
       (consumer-side pull with no shared credential, marker-based partial generation of a static

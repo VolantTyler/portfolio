@@ -165,4 +165,9 @@ if (skillList) {
   chips.forEach((chip) => {
     chip.addEventListener("click", () => filterSkills(chip.dataset.facet));
   });
+
+  // The markup ships every skill visible so crawlers see the full list; apply
+  // the default facet once JS is available.
+  const initial = chips.find((chip) => chip.classList.contains("is-active"));
+  filterSkills(initial ? initial.dataset.facet : "all");
 }

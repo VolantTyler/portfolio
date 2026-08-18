@@ -26,6 +26,13 @@ const FACET_LABELS = {
 };
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
+/**
+ * The chip the page opens on. Applied AI leads because it is the work the site
+ * is arguing for; "All" is one click away. Falls back to "all" if the facet ends
+ * up with no skills.
+ */
+const DEFAULT_FACET = "applied-ai";
+
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
 const esc = (v) =>
   String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;")
@@ -127,18 +134,21 @@ function renderExperience(roles) {
 }
 
 /**
- * Every skill is rendered into the HTML and the chips only toggle visibility,
- * so crawlers and no-JS visitors still see the complete list.
+ * Every skill is rendered into the HTML unhidden, and the chips only toggle
+ * visibility, so crawlers and no-JS visitors still see the complete list. The
+ * default facet is applied by script.js on load rather than baked in here.
  */
 function renderSkills(skills) {
   const order = Object.keys(FACET_LABELS);
   const present = order.filter((f) => skills.some((s) => s.facets.includes(f)));
+  const active = present.includes(DEFAULT_FACET) ? DEFAULT_FACET : "all";
+  const chip = (facet, label, count) => {
+    const on = facet === active;
+    return `  <button type="button" class="chip${on ? " is-active" : ""}" data-facet="${facet}" aria-pressed="${on}">${esc(label)} <span class="chip-count">${count}</span></button>`;
+  };
   const chips = [
-    `  <button type="button" class="chip is-active" data-facet="all" aria-pressed="true">All <span class="chip-count">${skills.length}</span></button>`,
-    ...present.map((f) => {
-      const n = skills.filter((s) => s.facets.includes(f)).length;
-      return `  <button type="button" class="chip" data-facet="${f}" aria-pressed="false">${esc(FACET_LABELS[f])} <span class="chip-count">${n}</span></button>`;
-    }),
+    chip("all", "All", skills.length),
+    ...present.map((f) => chip(f, FACET_LABELS[f], skills.filter((s) => s.facets.includes(f)).length)),
   ].join("\n");
   const items = skills.map((s) =>
     `  <li class="skill-pill" data-facets="${esc(s.facets.join(" "))}">${esc(s.name)}</li>`).join("\n");
