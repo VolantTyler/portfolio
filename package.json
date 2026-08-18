@@ -1,0 +1,12 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static portfolio site for tylerstahl.dev. Project cards, the experience timeline, the skills filter, and the agent-readable profiles are generated from data/resume-content.json, which is synced from VolantTyler/resume-system.",
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "sync": "node scripts/sync-resume-content.mjs",
+    "check": "node scripts/build-site.mjs --check"
+  }
+}

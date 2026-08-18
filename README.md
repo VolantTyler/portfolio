@@ -29,14 +29,32 @@ The remaining project cards use `assets/project-previews.png` as temporary artwo
 
 - `index.html` - public portfolio resume
 - `agents.html` - human-readable agent profile
-- `agents.json` - structured agent-readable profile (source of truth)
-- `agents.md` - plain-text agent-readable profile (generated from `agents.json`)
+- `agents.json` - structured agent-readable profile
+- `agents.md` - plain-text agent-readable profile
 
-Regenerate Markdown after JSON edits:
+## Generated Content
+
+Project cards, the experience timeline, the skills filter, `agents.json`, and `agents.md` are
+generated from `data/resume-content.json`, which is synced from
+[`VolantTyler/resume-system`](https://github.com/VolantTyler/resume-system). That repo is the source
+of truth for résumé data — add a project or skill there, not here.
 
 ```bash
-node scripts/sync-agents-md.mjs
+npm run build
 ```
+
+Only the regions between `<!-- generated:NAME start -->` and `<!-- generated:NAME end -->` markers
+in `index.html` are rewritten. Hero copy, layout, the evidence matrix, and the hand-written
+Agent-Ready Portfolio card are authored by hand and left alone. `agents.json` is *merged*, so its
+`privacy`, `documents`, `publicContact`, and `evidenceMatrix` blocks survive regeneration.
+
+```bash
+npm run check
+```
+
+Fails if the committed output is stale — run it before pushing.
+
+See [docs/resume-portfolio-sync-plan.md](docs/resume-portfolio-sync-plan.md) for the full design.
 
 ## Local Preview
 

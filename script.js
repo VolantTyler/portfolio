@@ -135,3 +135,34 @@ portraitCarousels.forEach((carousel) => {
 
   setActiveSlide(activeIndex);
 });
+
+const skillList = document.querySelector("[data-skill-list]");
+
+if (skillList) {
+  const chips = Array.from(document.querySelectorAll(".chip-row .chip"));
+  const pills = Array.from(skillList.querySelectorAll(".skill-pill"));
+
+  function filterSkills(facet) {
+    pills.forEach((pill) => {
+      const facets = (pill.dataset.facets || "").split(" ");
+      pill.hidden = facet !== "all" && !facets.includes(facet);
+    });
+
+    chips.forEach((chip) => {
+      const isActive = chip.dataset.facet === facet;
+      chip.classList.toggle("is-active", isActive);
+      chip.setAttribute("aria-pressed", String(isActive));
+    });
+
+    skillList.setAttribute(
+      "aria-label",
+      facet === "all"
+        ? "All skills"
+        : `Skills in ${chips.find((chip) => chip.dataset.facet === facet)?.textContent.trim()}`,
+    );
+  }
+
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => filterSkills(chip.dataset.facet));
+  });
+}
