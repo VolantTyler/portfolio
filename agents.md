@@ -8,7 +8,7 @@ Full-stack software engineer with experience shipping React/TypeScript and Larav
 
 _Public-safe profile. Phone and address are not duplicated in this machine-readable file; consult the downloadable resume only when a human reviewer needs full resume contact details._
 
-Last updated: 2026-08-18
+Last updated: 2026-08-19
 
 ## Contact
 
