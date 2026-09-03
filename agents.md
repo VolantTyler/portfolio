@@ -8,7 +8,7 @@ Full-stack software engineer with experience shipping React/TypeScript and Larav
 
 _Public-safe profile. Phone and address are not duplicated in this machine-readable file; consult the downloadable resume only when a human reviewer needs full resume contact details._
 
-Last updated: 2026-08-19
+Last updated: 2026-09-03
 
 ## Contact
 
@@ -17,7 +17,7 @@ Last updated: 2026-08-19
 
 ## Core competencies
 
-Multi-agent orchestration, CrewAI, Hybrid LLM inference, Antigravity, Gemma4, Google AI Studio, Codex / GPT, Human-in-the-loop controls, PII masking, Agent evaluation, Embeddings / RAG, Vertex AI, Ollama, Cursor Agent SDK, Model Context Protocol, Weights & Biases Weave, JavaScript, React, TypeScript, Next.js, Alpine, Tailwind CSS, Livewire, Figma, Adobe XD, Storybook, UX Design / Prototyping, Performance optimization, Firebase, Firestore, Sequelize, Python, FastAPI, Slack Bolt, Google Docs / Drive APIs, Laravel, GraphQL, SQLite, Clerk OAuth, PHP, Cypress, Docker, CI/CD, GitHub Actions, Release support, Stakeholder collaboration, Deep listening, Agile / Scrum, Consensus-building, Cross-department collaboration.
+Multi-agent orchestration, CrewAI, Hybrid LLM inference, Antigravity, Gemma4, Google AI Studio, Codex / GPT, Human-in-the-loop controls, PII masking, Agent evaluation, Embeddings / RAG, Vertex AI, Ollama, Cursor Agent SDK, Model Context Protocol, Weights & Biases Weave, JavaScript, React, TypeScript, Next.js, Alpine, Tailwind CSS, Livewire, Figma, Adobe XD, Storybook, UX Design / Prototyping, Performance optimization, Firebase, Firestore, Sequelize, Postgres / Drizzle ORM, Python, FastAPI, Slack Bolt, Google Docs / Drive APIs, Laravel, GraphQL, SQLite, Clerk OAuth, PHP, Cypress, Playwright, Docker, CI/CD, GitHub Actions, Release support, Stakeholder collaboration, Deep listening, Agile / Scrum, Consensus-building, Cross-department collaboration.
 
 ## Projects
 
@@ -74,6 +74,19 @@ Multi-agent orchestrator designed to manage subagents for feature evaluation, te
 
 - Modular subagent design for evaluation and testing workflows.
 - Mandatory human approval handoffs at critical stages.
+
+### Stack Overlord
+
+Live: https://stack-overlord.vercel.app/
+
+Stack: Codex, GPT-5.6, Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Postgres, Drizzle ORM, OpenAI Responses API, Vercel, Playwright, Vitest, GitHub Actions, Slack Bolt
+
+Built a Next.js/TypeScript command center that ingests signed GitHub Actions webhooks into a durable Postgres/Drizzle ledger (GitHub stays the source of truth for pass/fail), diagnoses failures with the OpenAI Responses API (GPT-5.6) using evidence citations, confidence levels, and verification steps, alerts Slack, and ships a deterministic credential-free demo mode so judges can exercise the whole flow.
+
+- Signed, idempotent GitHub webhook ingestion into a Postgres ledger, with GitHub kept as sole source of truth for workflow status.
+- GPT-5.6 failure diagnosis with evidence citations, confidence levels, and ordered verification steps, plus Slack failure alerts.
+- Deterministic, credential-free demo mode with fixture replay so OpenAI Build Week judges could evaluate the product without GitHub/OpenAI credentials.
+- Responsive (desktop/mobile) dashboard covered by Playwright and Vitest tests.
 
 ## Experience
 
