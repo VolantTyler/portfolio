@@ -54,7 +54,17 @@ npm run check
 
 Fails if the committed output is stale — run it before pushing.
 
-See [docs/resume-portfolio-sync-plan.md](docs/resume-portfolio-sync-plan.md) for the full design.
+### How content updates reach this site
+
+Edit a project, credential, or role in `resume-system`, then either:
+
+- run the [**Sync résumé content**](.github/workflows/sync-resume.yml) workflow manually
+  (Actions → Sync résumé content → Run workflow) to pull the change in right away, or
+- wait for its weekly safety-net run, Mondays at 13:00 UTC.
+
+Either way it pulls the published export, re-renders the generated regions, and opens a pull
+request here for review — nothing is pushed straight to `main`. See
+[docs/resume-portfolio-sync-plan.md](docs/resume-portfolio-sync-plan.md) for the full design.
 
 ## Local Preview
 

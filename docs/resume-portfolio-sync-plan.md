@@ -4,7 +4,10 @@ Wiring [`VolantTyler/resume-system`](https://github.com/VolantTyler/resume-syste
 [`VolantTyler/portfolio`](https://github.com/VolantTyler/portfolio) so a new project, credential, or
 role is entered once in YAML and flows to `tylerstahl.dev` through a reviewed pull request.
 
-Status: **planned, not yet implemented.** Last updated 2026-08-13.
+Status: **shipped.** All five milestones below are complete — adding a project, credential, or role
+to `resume-system` now reaches `tylerstahl.dev` through a reviewed pull request, with no credential
+shared between the repos. See `docs/TODO.md` for the milestone-by-milestone record. Last updated
+2026-09-03.
 
 > This document is kept in both repos. Edit one copy and copy it across — the two should stay
 > identical.
