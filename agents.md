@@ -8,7 +8,7 @@ Full-stack software engineer with experience shipping React/TypeScript and Larav
 
 _Public-safe profile. Phone and address are not duplicated in this machine-readable file; consult the downloadable resume only when a human reviewer needs full resume contact details._
 
-Last updated: 2026-09-03
+Last updated: 2026-10-07
 
 ## Contact
 
@@ -17,7 +17,7 @@ Last updated: 2026-09-03
 
 ## Core competencies
 
-Multi-agent orchestration, CrewAI, Hybrid LLM inference, Antigravity, Gemma4, Google AI Studio, Codex / GPT, Human-in-the-loop controls, PII masking, Agent evaluation, Embeddings / RAG, Vertex AI, Ollama, Cursor Agent SDK, Model Context Protocol, Weights & Biases Weave, JavaScript, React, TypeScript, Next.js, Alpine, Tailwind CSS, Livewire, Figma, Adobe XD, Storybook, UX Design / Prototyping, Performance optimization, Firebase, Firestore, Sequelize, Postgres / Drizzle ORM, Python, FastAPI, Slack Bolt, Google Docs / Drive APIs, Laravel, GraphQL, SQLite, Clerk OAuth, PHP, Cypress, Playwright, Docker, CI/CD, GitHub Actions, Release support, Stakeholder collaboration, Deep listening, Agile / Scrum, Consensus-building, Cross-department collaboration.
+Multi-agent orchestration, CrewAI, Hybrid LLM inference, Antigravity, Gemma4, Google AI Studio, Codex / GPT, Anthropic API, Human-in-the-loop controls, PII masking, Agent evaluation, Embeddings / RAG, Vertex AI, Ollama, Cursor Agent SDK, Model Context Protocol, Weights & Biases Weave, JavaScript, React, TypeScript, Next.js, Alpine, Tailwind CSS, Livewire, Figma, Adobe XD, Storybook, UX Design / Prototyping, Performance optimization, Firebase, Firestore, Sequelize, Postgres / Drizzle ORM, Python, FastAPI, Slack Bolt, Google Docs / Drive APIs, Laravel, GraphQL, SQLite, Clerk OAuth, PHP, Cypress, Playwright, Docker, CI/CD, GitHub Actions, Release support, Stakeholder collaboration, Deep listening, Agile / Scrum, Consensus-building, Cross-department collaboration.
 
 ## Projects
 
@@ -88,6 +88,18 @@ Built a Next.js/TypeScript command center that ingests signed GitHub Actions web
 - Deterministic, credential-free demo mode with fixture replay so OpenAI Build Week judges could evaluate the product without GitHub/OpenAI credentials.
 - Responsive (desktop/mobile) dashboard covered by Playwright and Vitest tests.
 
+### The State of AI — living briefing
+
+Live: https://state-of-ai-briefing.vercel.app/
+
+Stack: Vite, React, JavaScript, GitHub Actions, Vercel, Anthropic API
+
+Built a periodically refreshed industry briefing as a Vite/React static site on Vercel, with GitHub Actions running scripts/refresh.js to update panel data via the Anthropic API (filtered web search for valuations; Haiku-backed panels with configured web search), direct fetches for US app-store ranks and Yahoo Finance closes, and commits to public/data/*.json plus trend.csv so visitors only read published files from the CDN.
+
+- Daily GitHub Actions refresh (08:00 UTC) plus a separate weekly valuations job; each refresh is a dated commit forming an auditable trend log.
+- Static delivery model — no public refresh URL, no per-visitor API keys, and no database on page load.
+- Multi-panel dashboard covering valuations, public markets, model capability, usage, app store rankings, capital, energy/data centers, and related analyst notes (per deployed site).
+
 ## Experience
 
 ### Applied AI Developer — Independent R&D
@@ -102,6 +114,8 @@ _Feb 2026 - Present_
 - Deployed InSummery on Firebase (Auth, Cloud Functions, Firestore) with a React dashboard and local CLI mode for zero-cloud demos.
 - Built a multi-agent market-intelligence pilot on OpenClaw with specialized agents and SQLite-backed durable memory for long-running research workflows.
 - Built Stack Overlord for OpenAI Build Week primarily with Codex/GPT-5.6, using GPT-5.6 for project intelligence.
+- Built State of AI Briefing as a Vite/React static site whose panel data is refreshed by GitHub Actions into committed JSON/CSV, so Vercel serves updates without shipping API keys to browsers.
+- Built the State of AI Briefing refresh job to update dashboard panels via Anthropic API web search, Yahoo Finance, and app-store chart fetches, with spend caps and failed-panel fallbacks to prior values.
 
 ### Front-End Developer — NAMI
 
